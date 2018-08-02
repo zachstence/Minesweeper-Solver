@@ -44,8 +44,24 @@ int main() {
     {'*', '1'}
   };
 
-  auto bombs = findBombs(board1);
-  cout << "Num bombs: " << bombs.size() << endl;
-  cout << "Bomb list: " << endl;
-  printCellSet(bombs);
+  vector<vector<char>> board4 = {
+    {'*', '*', '*', '*', '*', '*', '*', '*', '*'},
+    {'*', '*', '*', '*', '*', '*', '*', '*', '*'},
+    {'*', '*', '*', '#', '2', '1', '1', '#', '#'},
+    {'*', '*', '*', '2', '1', ' ', '1', '2', '2'},
+    {'*', '*', '#', '1', ' ', ' ', ' ', ' ', ' '},
+    {'*', '2', '1', '1', ' ', ' ', ' ', ' ', ' '},
+    {'*', '1', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+    {'*', '1', '1', '1', ' ', ' ', ' ', ' ', ' '},
+    {'*', '*', '#', '1', ' ', ' ', ' ', ' ', ' '}
+  };
+
+  // auto bombs = findBombs(board1);
+  // cout << "Num bombs: " << bombs.size() << endl;
+  // cout << "Bomb list: " << endl;
+  // printCellSet(bombs);
+
+  auto safe = findSafe(board4);
+  cout << "safe list: " << endl;
+  printCellSet(safe);
 }
